@@ -3,7 +3,7 @@ package dev.core.dto;
 import lombok.Data;
 
 @Data
-public class UserDTO {
-    private Long id;
+public class CreateUserDTO {
     private String username;
+    private String password;
 }

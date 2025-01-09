@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:database
+    driverClassName: org.h2.Driver
+    username: h2
+    password: 1234
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  security:
+    jwt:
+      secret-key: 6E327235753878214125442A472D4B6150645367566B59703373367639792442
+      expiration: 43200000
+logging:
+  level:
+    org.springframework.security: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE

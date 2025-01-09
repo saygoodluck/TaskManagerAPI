@@ -6,7 +6,6 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 
 import java.util.Set;
 
@@ -19,7 +18,6 @@ public class Role extends BaseEntity {
     @Column(name = "name")
     private String name;
 
-    @ToString.Exclude
     @OneToMany(mappedBy = "role")
     private Set<User> users;
 }

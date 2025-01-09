@@ -1,11 +1,9 @@
 package dev.security.service;
 
 
-import dev.security.dto.LoginDTO;
 import dev.security.dto.TokenDTO;
 import dev.security.jwt.JwtService;
 import jakarta.transaction.Transactional;
-import lombok.AllArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.stereotype.Service;
@@ -24,10 +22,10 @@ public class AuthorizationService {
     }
 
     @Transactional
-    public TokenDTO login(LoginDTO loginDTO) {
-        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(loginDTO.getUsername().trim(), loginDTO.getPassword().trim());
+    public TokenDTO login(String username, String password) {
+        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(username, password);
         authenticationManager.authenticate(authenticationToken);
-        var managerJwt = jwtService.generateToken(loginDTO.getUsername());
+        var managerJwt = jwtService.generateToken(username);
         return new TokenDTO(managerJwt);
     }
 }

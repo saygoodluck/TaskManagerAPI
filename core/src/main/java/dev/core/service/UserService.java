@@ -1,6 +1,7 @@
 package dev.core.service;
 
 import dev.core.domain.User;
+import dev.core.dto.CreateUserDTO;
 import dev.core.dto.UserDTO;
 import dev.core.mapper.UserMapper;
 import dev.core.repository.UserRepository;
@@ -19,6 +20,13 @@ public class UserService {
     public UserService(UserRepository userRepository, UserMapper userMapper) {
         this.userRepository = userRepository;
         this.userMapper = userMapper;
+    }
+
+    public User create(String username, String password) {
+        User user = new User();
+        user.setUsername(username);
+        user.setPassword(password);
+        return userRepository.save(user);
     }
 
     public Optional<User> findByUsername(String username) {
