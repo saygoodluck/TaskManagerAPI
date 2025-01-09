@@ -1,4 +1,4 @@
-package dev.controller;
+package dev.api.controller;
 
 import dev.core.dto.TaskDTO;
 import dev.core.service.TaskService;

@@ -1,8 +1,9 @@
-package dev.controller;
+package dev.api.controller;
 
 import dev.core.domain.User;
 import dev.core.dto.CreateUserDTO;
 import dev.core.service.UserService;
+import dev.api.dto.MyUserDetailsDTO;
 import dev.security.MyUserDetails;
 import dev.security.dto.LoginDTO;
 import dev.security.dto.TokenDTO;
@@ -46,7 +47,14 @@ public class AuthController {
 
     @GetMapping("/whoami")
     @PreAuthorize("isAuthenticated()")
-    public ResponseEntity<MyUserDetails> whoAmI(Authentication authentication) {
-        return ResponseEntity.ok((MyUserDetails) authentication.getPrincipal());
+    public ResponseEntity<MyUserDetailsDTO> whoAmI(Authentication authentication) {
+        MyUserDetails userDetails = (MyUserDetails) authentication.getPrincipal();
+
+        MyUserDetailsDTO userDetailsDTO = new MyUserDetailsDTO();
+        userDetailsDTO.setId(userDetails.getId());
+        userDetailsDTO.setUsername(userDetails.getUsername());
+        userDetailsDTO.setRoleName(userDetails.getRoleName());
+
+        return ResponseEntity.ok(userDetailsDTO);
     }
 }

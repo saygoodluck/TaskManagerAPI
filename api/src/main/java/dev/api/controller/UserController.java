@@ -1,4 +1,4 @@
-package dev.controller;
+package dev.api.controller;
 
 import dev.core.dto.CreateUserDTO;
 import dev.core.dto.UserDTO;
