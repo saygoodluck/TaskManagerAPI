@@ -1,7 +1,6 @@
 package dev.core.service;
 
 import dev.core.domain.User;
-import dev.core.dto.CreateUserDTO;
 import dev.core.dto.UserDTO;
 import dev.core.mapper.UserMapper;
 import dev.core.repository.UserRepository;

@@ -1,4 +1,4 @@
-package dev.core.dto;
+package dev.api.dto;
 
 import lombok.Data;
 

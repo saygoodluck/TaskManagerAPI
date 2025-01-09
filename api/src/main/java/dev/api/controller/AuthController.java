@@ -1,18 +1,17 @@
 package dev.api.controller;
 
+import dev.api.dto.CreateUserDTO;
 import dev.core.domain.User;
-import dev.core.dto.CreateUserDTO;
 import dev.core.service.UserService;
-import dev.api.dto.MyUserDetailsDTO;
-import dev.security.MyUserDetails;
 import dev.security.dto.LoginDTO;
 import dev.security.dto.TokenDTO;
 import dev.security.service.AuthorizationService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/auth")
@@ -45,16 +44,16 @@ public class AuthController {
         return ResponseEntity.badRequest().build();
     }
 
-    @GetMapping("/whoami")
-    @PreAuthorize("isAuthenticated()")
-    public ResponseEntity<MyUserDetailsDTO> whoAmI(Authentication authentication) {
-        MyUserDetails userDetails = (MyUserDetails) authentication.getPrincipal();
-
-        MyUserDetailsDTO userDetailsDTO = new MyUserDetailsDTO();
-        userDetailsDTO.setId(userDetails.getId());
-        userDetailsDTO.setUsername(userDetails.getUsername());
-        userDetailsDTO.setRoleName(userDetails.getRoleName());
-
-        return ResponseEntity.ok(userDetailsDTO);
-    }
+//    @GetMapping("/whoami")
+//    @PreAuthorize("isAuthenticated()")
+//    public ResponseEntity<UserDTO> whoAmI(Authentication authentication) {
+//        MyUserDetails userDetails = (MyUserDetails) authentication.getPrincipal();
+//
+//        UserDTO userDTO = new UserDTO();
+//        userDTO.setId(userDetails.getId());
+//        userDTO.setUsername(userDetails.getUsername());
+//        userDTO.setRoleName(userDetails.getRoleName());
+//
+//        return ResponseEntity.ok(userDTO);
+//    }
 }
