@@ -1,6 +1,6 @@
-# TaskManagerAPI
+# Task Manager API
 
-TaskManagerAPI is a multi-module Spring Boot project designed to provide a robust and secure API for managing tasks. The project is organized into several modules to promote scalability, maintainability, and separation of concerns. It leverages Lombok to reduce boilerplate code and integrates Spring Security for authentication and authorization.
+Task Manager API is a multi-module Spring Boot project designed to provide a robust and secure API for managing tasks. The project is organized into several modules to promote scalability, maintainability, and separation of concerns. It leverages Lombok to reduce boilerplate code and integrates Spring Security for authentication and authorization.
 
 ## Table of Contents
 
@@ -24,9 +24,9 @@ TaskManagerAPI is a multi-module Spring Boot project designed to provide a robus
 
 ## Project Structure
 
-The TaskManagerAPI project is organized into the following Maven modules:
+The Task Manager API project is organized into the following Maven modules:
 
-TaskManagerAPI (parent pom)  
+task-manager-api (parent pom)  
 ├── core  
 │ └── src/main/java/dev/core  
 ├── api  
@@ -84,8 +84,8 @@ TaskManagerAPI (parent pom)
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/TaskManagerAPI.git
-   cd TaskManagerAPI
+   git clone https://github.com/yourusername/task-manager-api.git
+   cd task-manager-api
 
 2. **Import the Project into Your IDE**:
 
@@ -104,7 +104,7 @@ Navigate to File -> Settings -> Build, Execution, Deployment -> Compiler -> Anno
 Check the box Enable annotation processing.  
 
 ## Building the Project
-To build the entire project, navigate to the root directory (TaskManagerAPI) and run:
+To build the entire project, navigate to the root directory (task-manager-api) and run:
 
 ```bash
 mvn clean install  
