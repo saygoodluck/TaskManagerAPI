@@ -6,7 +6,7 @@
 	<name>core</name>
 
 	<parent>
-		<artifactId>TaskManagerAPI</artifactId>
+		<artifactId>task-manager-api</artifactId>
 		<groupId>dev</groupId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
